@@ -1,0 +1,57 @@
+/*
+Nombre: Hersal
+Comentario
+*/
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    background-color: lightblue;
+    font-family: sans-serif;
+    padding: 80px 0px 20px 0px ;
+}
+
+.header{
+    background-color: lightcoral;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+
+}
+
+.aside{
+    background-color: lightslategray;
+    position: fixed;
+    top: 80px;
+    width: 20%;
+    bottom: 20px;
+}
+
+.contenido{
+    background-color: lightsalmon;
+    position: fixed;
+    top: 80px;
+    right: 0;
+    width: 80%;
+    bottom: 20px;
+    overflow-y: scroll;
+    padding: 20px;
+}
+
+.footer{
+    background-color: lightseagreen;
+    height: 20px;
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+}
+
+nav a{
+    color:white;
+}
