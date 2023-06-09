@@ -26,15 +26,19 @@
     <body>
 
         <header class="header">
-            <h1>GoOnline</h1>
-
-            <!-- <h1 style="color:lightcoral; text-align: center" >GoOnline</h1> --> 
-            <nav>
-                <a href="ejemplo5.html" >Atras</a>
-                <a href="index.html" >HOME</a>
-                <a href="ejemplo1.html" >Siguiente</a>
+            <nav class="nav">
+                <a href="index.html" class="logo nav_link">GoGoOnline</a>
+                <ul class="nav_menu">
+                    <li class="nav_menu_item" ><a class="nav_link nav_menu_link" href="ejemplo5.html">&LeftTriangleBar;</a></li>
+                    <li class="nav_menu_item"><a class="nav_link nav_menu_link" href="ejemplo1.html">&RightTriangleBar;</a></li>
+                    <li class="nav_menu_item"><a class="nav_link nav_menu_link" href="audio.html">Audio</a></li>
+                    <li class="nav_menu_item"><a class="nav_link nav_menu_link" href="video.html">Video</a></li>
+                    <li class="nav_menu_item"><a class="nav_link nav_menu_link" href="iframe.html">Iframe</a></li>
+                    <li class="nav_menu_item"><a class="nav_link nav_menu_link" href="formulario.html">Formulario</a></li>
+                </ul>
             </nav>
         </header>
+
 
         <aside class="aside">
             <h2>Noticias y ofertas</h2>
@@ -43,6 +47,53 @@
         </aside>
 
         <section class="contenido">
+            <h2>Productos</h2>
+
+            <article>
+                <header>
+                    <h3>Lista de clientes</h3>
+                </header>
+
+                <table >
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Edad</th>
+                            <th>Credito</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="texto_centrado">1</td>
+                            <td>Kenneth Rojas</td>
+                            <td class="texto_centrado">39</td>
+                            <td class="texto_derecho">₡35500.00</td>
+                        </tr>
+                        <tr>
+                            <td class="texto_centrado">2</td>
+                            <td>Marcos Solis</td>
+                            <td class="texto_centrado">23</td>
+                            <td class="texto_derecho">₡23000.00</td>
+                        </tr>
+                        <tr>
+                            <td class="texto_centrado">3</td>
+                            <td>Joel Solis</td>
+                            <td class="texto_centrado">28</td>
+                            <td class="texto_derecho">₡1200.00</td>
+                        </tr>
+                        <tr>
+                            <td class="texto_centrado">4</td>
+                            <td>Sofia Alfaro</td>
+                            <td class="texto_centrado">22</td>
+                            <td class="texto_derecho">₡32000.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </article>
+
+
 
             <article>
                 <header>
@@ -108,11 +159,10 @@
             </article>
 
         </section>
- 
+
         <footer class="footer">
             <p>Todos los derechos reservados &COPY; 2023 | GoOnline </p>
         </footer>
-
 
 
 
