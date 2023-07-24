@@ -167,13 +167,31 @@
                                         <div class="card">
                                             <div class="card-header">
                                                 <h4>[[#{accion.actualizar}]]</h4>
-                                            </div>
+                                            </div>                                            
                                             <div class="card-body">
+
+                                                <div class="mb-3">
+
+                                                    <label for="idCategoria">[[#{producto.categoria}]]</label>
+                                                    <select id="idCategoria" name="categoria.idCategoria" class="form-select" aria-label="Default select exmple">
+                                                        <option th:each="categoria : ${categorias}"
+                                                                th:value="${categoria.idCategoria}">
+                                                            [[${categoria.descripcion}]]                                                
+                                                        </option>
+                                                    </select>
+                                                    
+
+
+                                                </div>
                                                 <div class="mb-3">
                                                     <label for="descripcion">[[#{producto.descripcion}]]</label>
                                                     <input type="text" class="form-control" 
                                                            name="descripcion" th:field="*{descripcion}"
                                                            required="true">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="detalle">[[#{producto.detalle}]]</label>
+                                                    <textarea class="form-control" id="detalle" name="detalle" rows="3" th:field="*{detalle}" ></textarea>
                                                 </div>
                                                 <div class="mb-3">
                                                     <label for="activo">[[#{producto.activo}]]</label>
@@ -184,11 +202,24 @@
                                                            th:field="*{activo}">
                                                 </div>
                                                 <div class="mb-3">
+                                                    <label for="precio">[[#{producto.precio}]]</label>
+                                                    <input type="text" class="form-control" 
+                                                           name="precio" th:field="*{precio}"
+                                                           required="true">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="existencias">[[#{producto.existencias}]]</label>
+                                                    <input type="text" class="form-control" 
+                                                           name="existencias" th:field="*{existencias}"
+                                                           required="true">
+                                                </div>
+                                                <div class="mb-3">
                                                     <label for="imagen">[[#{producto.imagen}]]</label>
                                                     <input class="form-control" type="file" name="imagenFile"
                                                            onchange="readURL(this);" />
-                                                    <img id="blah" th:src="@{${producto.rutaImagen}}" alt="your image" height="200"/>
+                                                    <img id="blah" th:src="@{${producto.rutaImagen}}" alt="your image" height="200" class="mt-4"/>
                                                 </div>
+
                                             </div>
                                         </div>
                                     </div>
