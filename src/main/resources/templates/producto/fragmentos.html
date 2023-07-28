@@ -10,7 +10,7 @@
         <section th:fragment="botonesAgregar" class="py-4 mb-4 bg-light">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-3">   
+                    <div class="col-md-3" sec:authorize="hasRole('ROLE_ADMIN')">   
                         <button 
                             type="button" 
                             class="btn btn-primary btn-block" 
@@ -110,7 +110,7 @@
                                             <th class="text-center">[[#{producto.total}]]</th>
                                             <th class="text-center">[[#{producto.activo}]]</th>
                                             <th class="text-center">[[#{producto.categoria}]]</th>
-                                            <th></th></tr>
+                                            <th sec:authorize="hasRole('ROLE_ADMIN')"></th></tr>
                                     </thead>
                                     <tbody>
                                         <tr th:each="producto, contador : ${productos}">
@@ -121,7 +121,7 @@
                                             <td class="text-end">₡[[${#numbers.formatDecimal(producto.precio*producto.existencias, 1, 'DEFAULT', 2, 'DEFAULT')}]]</td>
                                             <td th:text="${producto.activo} ? 'Activa' : 'Inactiva'" />
                                             <td class="text-center">[[${producto.categoria.descripcion}]]</td>
-                                            <td><a th:href="@{/producto/eliminar/}+${producto.idProducto}"
+                                            <td sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/producto/eliminar/}+${producto.idProducto}"
                                                    class="btn btn-danger">
                                                     <i class="fas fa-trash"></i> [[#{accion.eliminar}]]</a>
                                                 <a th:href="@{/producto/modificar/}+${producto.idProducto}"
@@ -173,14 +173,13 @@
                                                 <div class="mb-3">
 
                                                     <label for="idCategoria">[[#{producto.categoria}]]</label>
-                                                    <select id="idCategoria" name="categoria.idCategoria" class="form-select" aria-label="Default select exmple">
+                                                    <select id="idCategoria" name="categoria.idCategoria" class="form-select" aria-label="Default select exmple" 
+                                                            th:field="*{categoria.idCategoria}">
                                                         <option th:each="categoria : ${categorias}"
                                                                 th:value="${categoria.idCategoria}">
                                                             [[${categoria.descripcion}]]                                                
                                                         </option>
                                                     </select>
-                                                    
-
 
                                                 </div>
                                                 <div class="mb-3">
