@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+    <head th:replace="~{layout/plantilla::head}">
+        <title>TechShop</title>
+    </head>
+
+    <body>
+        <header th:replace="~{layout/plantilla::header}"></header>
+
+        <div class="container mt-2">
+            <div class="row"></div>
+            <div class="row row-cols-6">
+                <a th:href="@{/}" class="btn btn-primary">
+                    <i class="fas fa-arrow-left"></i> [[#{accion.regresar}]]
+                </a>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header text-center bg-primary text-white">
+                        Reportes Usuarios
+                    </div>
+                    <div class="card-body text-center">
+                        <a href="/reportes/usuarios?tipo=vPdf" class="btn btn-primary">
+                            <i class="fas fa-eye"></i> Ver PDF
+                        </a>
+                        <a href="/reportes/usuarios?tipo=Pdf" class="btn btn-success">
+                            <i class="fas fa-download"></i> Descargar PDF
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header text-center bg-primary text-white">
+                        Reportes Productos
+                    </div>
+                    <div class="card-body text-center">
+                        <a href="/reportes/productos?tipo=vPdf" class="btn btn-primary">
+                            <i class="fas fa-eye"></i> Ver PDF
+                        </a>
+                        <a href="/reportes/productos?tipo=Pdf" class="btn btn-success">
+                            <i class="fas fa-download"></i> Descargar PDF
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header text-center bg-primary text-white">
+                        Reportes Categorias
+                    </div>
+                    <div class="card-body text-center">
+                        <a href="/reportes/categorias?tipo=vPdf" class="btn btn-primary">
+                            <i class="fas fa-eye"></i> Ver PDF
+                        </a>
+                        <a href="/reportes/categorias?tipo=Pdf" class="btn btn-success">
+                            <i class="fas fa-download"></i> Descargar PDF
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+
+        <footer th:replace="~{layout/plantilla::footer}"></footer>
+    </body>
+</html>
